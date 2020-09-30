@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+<form action="" method="post">
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="url">URL:</label>
+    <input type="text" class="form-control" id="url" name="url" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">product link</small>
+  </div>
+  <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
