@@ -6,8 +6,8 @@ from django.db import models
 class ProductCatalogue(models.Model):
     name = models.CharField(max_length=100)
     vendor = models.CharField(max_length=50)
-    url = models.URLField()
-    image_url = models.URLField()
+    url = models.URLField(max_length=500)
+    image_url = models.URLField(max_length=1000)
 
 
 class DailyProductData(models.Model):
