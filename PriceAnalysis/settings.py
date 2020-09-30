@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_crontab',
     'dashboard',
-    'data_collection'
+    'data_collection',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,7 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = "/dashboard/static/"
 django_heroku.settings(locals())
+
+CRONJOBS = [
+    ('*/1 * * * *', 'data_collection.jobs.update_daily_data')
+]
