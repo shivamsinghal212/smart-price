@@ -30,7 +30,7 @@ class Populator:
             return pc_obj
 
     def update_daily_data(self, pc_obj: ProductCatalogue, product_data):
-        current_date = datetime.now().date()
+        current_date = datetime.utcnow().date()
         if product_data:
             dpd_obj: DailyProductData = DailyProductData.objects.filter(product=pc_obj, datetime__day=current_date.day,
                                                                         datetime__month=current_date.month,
